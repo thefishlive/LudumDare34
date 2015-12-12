@@ -12,10 +12,10 @@ December 2015, 12th - 14th
 Compo
 
 ##Theme
-To Be Announced
+Two Button Control
 
 ##Game Information
-
+A first person puzzel game
 
 ##Tools
 - Unity 3D 5.3.0
