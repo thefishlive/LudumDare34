@@ -16,7 +16,9 @@ public class PlayerControls : PlayerActionSet
     public PlayerAction MoveBackwards   { get; private set; }
     public PlayerTwoAxisAction Move     { get; private set; }
 
-    public PlayerAction Pause           { get; private set; } 
+    public PlayerAction Pause           { get; private set; }
+    public PlayerAction Jump            { get; private set; }
+    public PlayerAction Interact        { get; private set; }
 
     public PlayerControls() 
     {
@@ -33,6 +35,8 @@ public class PlayerControls : PlayerActionSet
         Move = CreateTwoAxisPlayerAction(MoveLeft, MoveRight, MoveBackwards, MoveForward);
 
         Pause = CreatePlayerAction("Pause");
+        Jump = CreatePlayerAction("Jump");
+        Interact = CreatePlayerAction("Interact");
 	}
 	
 	public void SetupDefaultControls() 
@@ -57,5 +61,9 @@ public class PlayerControls : PlayerActionSet
 
         Pause.AddDefaultBinding(Key.Escape);
         Pause.AddDefaultBinding(InputControlType.Start);
+        Jump.AddDefaultBinding(Key.Space);
+        Jump.AddDefaultBinding(InputControlType.Action1);
+        Interact.AddDefaultBinding(Key.E);
+        Interact.AddDefaultBinding(InputControlType.Action4);
 	}
 }

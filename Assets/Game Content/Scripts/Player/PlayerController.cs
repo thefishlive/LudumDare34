@@ -6,11 +6,14 @@ public class PlayerController : MonoBehaviour
     public bool CanMove;
     public bool CanLook;
     public bool CanInteract;
+    public bool CanJump;
 
     public float SensitivityX;
     public float SensitivityY;
 
     public float MovementSpeed;
+    public float JumpStrength;
+    public int PlayerReach;
 
     private PlayerControls Controls;
     private Transform camera;
@@ -73,6 +76,35 @@ public class PlayerController : MonoBehaviour
         if (CanMove)
         {
             transform.position += (transform.forward * (Controls.Move.Y * MovementSpeed)) + (transform.right * (Controls.Move.X * MovementSpeed));
+        }
+
+        if (CanJump)
+        {
+            if (Controls.Jump.WasPressed)
+            {
+                Debug.Log("Jump");
+                GetComponent<Rigidbody>().AddForce(Vector3.up * JumpStrength, ForceMode.Impulse);
+            }
+        }
+
+        if (CanInteract)
+        {
+            if (Controls.Interact.WasPressed)
+            {
+                RaycastHit hit;
+
+                if (Physics.Raycast(new Ray(camera.transform.position, camera.transform.forward), out hit, PlayerReach))
+                {
+                    GameObject obj = hit.collider.gameObject;
+                    Debug.Log(obj.name);
+                    var interactable = obj.GetComponent<Interactable>();
+
+                    if (interactable != null)
+                    {
+                        interactable.interact();
+                    }
+                }
+            }
         }
     }
 }

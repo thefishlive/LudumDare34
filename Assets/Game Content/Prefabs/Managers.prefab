@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1cb4d046961d44c9b75b7e8750bdcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HUD: {fileID: 0}
+  HUD: {fileID: 100268, guid: 708ab615381718d4f97fb2eb4c529238, type: 2}
   PauseMenu: {fileID: 123586, guid: e2ffd74de5f8b174dba07367620fb488, type: 2}
 --- !u!114 &11451258
 MonoBehaviour:
