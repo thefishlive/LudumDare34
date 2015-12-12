@@ -10,7 +10,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: LudumDare34
+  productName: LudumDare34-working
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1
@@ -95,7 +95,7 @@ PlayerSettings:
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   virtualRealitySupported: 0
-  productGUID: 798397073c1f25f4a8bb0b87415625f2
+  productGUID: e64e3369873851a4d8050e54d96eecd5
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 1
@@ -320,15 +320,24 @@ PlayerSettings:
   psp2InfoBarColor: 0
   psmSplashimage: {fileID: 0}
   spritePackerPolicy: 
-  scriptingDefineSymbols: {}
-  metroPackageName: LudumDare34
+  scriptingDefineSymbols:
+    1: CROSS_PLATFORM_INPUT
+    2: CROSS_PLATFORM_INPUT
+    4: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    7: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    14: MOBILE_INPUT
+    15: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    16: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    17: MOBILE_INPUT
+    20: MOBILE_INPUT
+  metroPackageName: LudumDare34-working
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: LudumDare34
+  metroApplicationDescription: LudumDare34-working
   wsaImages: {}
   metroTileShortName: 
   metroCommandLineArgsFile: 
