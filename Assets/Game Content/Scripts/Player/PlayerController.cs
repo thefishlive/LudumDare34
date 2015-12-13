@@ -30,8 +30,12 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        UIManager = GameObject.FindGameObjectWithTag("UI Manager").GetComponent<UIManager>();
+        UIManager = Utils.getUIManager();
 	}
+
+    void Awake()
+    {
+    }
 	
 	// Update is called once per frame
 	void Update () 

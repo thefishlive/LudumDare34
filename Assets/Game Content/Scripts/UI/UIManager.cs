@@ -6,8 +6,8 @@ public class UIManager : MonoBehaviour
     public GameObject HUD;
     public GameObject PauseMenu;
 
-    private GameObject HUDInstance;
-    private GameObject PauseMenuInstance;
+    public GameObject HUDInstance { get; set; }
+    public GameObject PauseMenuInstance { get; set; }
 
 	void Start () 
     {

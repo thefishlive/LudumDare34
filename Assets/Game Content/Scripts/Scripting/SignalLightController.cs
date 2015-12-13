@@ -11,7 +11,7 @@ public class SignalLightController : Interactable
 
     public bool State;
 
-    public void SetState(bool state)
+    public virtual void SetState(bool state)
     {
         Debug.Log(state);
         State = state;

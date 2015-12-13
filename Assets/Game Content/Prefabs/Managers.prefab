@@ -31,6 +31,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &145604
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 431436}
+  - 114: {fileID: 11434238}
+  m_Layer: 0
+  m_Name: Text Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &171446
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,6 +77,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 473216}
   m_RootOrder: 0
+--- !u!4 &431436
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145604}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 473216}
+  m_RootOrder: 2
 --- !u!4 &445990
 Transform:
   m_ObjectHideFlags: 1
@@ -85,6 +113,7 @@ Transform:
   m_Children:
   - {fileID: 409664}
   - {fileID: 445990}
+  - {fileID: 431436}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!114 &11400978
@@ -125,6 +154,17 @@ MonoBehaviour:
   xInputBufferSize: 0
   enableICade: 0
   customProfiles: []
+--- !u!114 &11434238
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ddb2b63b52a04c4795d57c0df425c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11442520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -138,6 +178,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HUD: {fileID: 100268, guid: 708ab615381718d4f97fb2eb4c529238, type: 2}
   PauseMenu: {fileID: 123586, guid: e2ffd74de5f8b174dba07367620fb488, type: 2}
+  HUDInstance: {fileID: 0}
+  PauseMenuInstance: {fileID: 0}
 --- !u!114 &11451258
 MonoBehaviour:
   m_ObjectHideFlags: 1
