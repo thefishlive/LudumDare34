@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        Debug.Log(Cursor.lockState);
 
         UIManager = Utils.getUIManager();
 	}
@@ -48,12 +49,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateMovement()
     {
-        if (Cursor.lockState == CursorLockMode.None)
-        {
-            return;
-        }
-
-        if (CanLook)
+        if (CanLook && Cursor.lockState != CursorLockMode.None)
         {
             Vector3 cameradestination = camera.transform.localEulerAngles + new Vector3(Controls.Look.Y * SensitivityY, 0.0f, 0.0f);
 
@@ -71,10 +67,12 @@ public class PlayerController : MonoBehaviour
 
             float rotationX = Controls.Look.X * SensitivityX;
             transform.localEulerAngles = transform.localEulerAngles + new Vector3(0.0f, rotationX, 0.0f);
+            if (Controls.Look.Value.sqrMagnitude > 0) GetComponent<PlayMakerFSM>().SendEvent("Looked");
         }
 
         if (CanMove)
         {
+            if (Controls.Move.Value.sqrMagnitude > 0) GetComponent<PlayMakerFSM>().SendEvent("Moved");
             GetComponent<Rigidbody>().AddForce(transform.forward * (Controls.Move.Y * MovementSpeed), ForceMode.Impulse);
             GetComponent<Rigidbody>().AddForce(transform.right * (Controls.Move.X * MovementSpeed), ForceMode.Impulse);
         }

@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(Animator))]
 public class DoorController : Interactable 
 {
     private static int OPEN = Animator.StringToHash("Open");
+
+    public List<string> OpenMessage = null;
 
     private Animator animator;
 
@@ -23,6 +25,17 @@ public class DoorController : Interactable
     public void SetOpen(bool open)
     {
         animator.SetBool(OPEN, open);
+
+        if (open && OpenMessage.Count != 0)
+        {
+            var controller = Utils.getTextController();
+            controller.Clear();
+
+            foreach (string message in OpenMessage)
+            {
+                controller.ShowMessage(message);
+            }
+        }
     }
 
     public void Toggle()
