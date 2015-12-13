@@ -32,10 +32,6 @@ public class PlayerController : MonoBehaviour
 
         UIManager = Utils.getUIManager();
 	}
-
-    void Awake()
-    {
-    }
 	
 	// Update is called once per frame
 	void Update () 
@@ -79,7 +75,8 @@ public class PlayerController : MonoBehaviour
 
         if (CanMove)
         {
-            transform.position += (transform.forward * (Controls.Move.Y * MovementSpeed)) + (transform.right * (Controls.Move.X * MovementSpeed));
+            GetComponent<Rigidbody>().AddForce(transform.forward * (Controls.Move.Y * MovementSpeed), ForceMode.Impulse);
+            GetComponent<Rigidbody>().AddForce(transform.right * (Controls.Move.X * MovementSpeed), ForceMode.Impulse);
         }
 
         if (CanJump)
