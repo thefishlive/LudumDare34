@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
             float rotationX = Controls.Look.X * SensitivityX;
             transform.localEulerAngles = transform.localEulerAngles + new Vector3(0.0f, rotationX, 0.0f);
-            if (Controls.Look.Value.sqrMagnitude > 0) GetComponent<PlayMakerFSM>().SendEvent("Looked");
+            if (Controls.Look.Value.sqrMagnitude > 1f) GetComponent<PlayMakerFSM>().SendEvent("Looked");
         }
 
         if (CanMove)
@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
 
         if (CanJump)
         {
-            if (Controls.Jump.WasPressed)
+            if (Controls.Jump.WasPressed && Physics.Raycast(new Ray(transform.position, Vector3.down), 1f))
             {
                 Debug.Log("Jump");
                 GetComponent<Rigidbody>().AddForce(Vector3.up * JumpStrength, ForceMode.Impulse);

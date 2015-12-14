@@ -6,8 +6,6 @@ public class DoorController : Interactable
 {
     private static int OPEN = Animator.StringToHash("Open");
 
-    public List<string> OpenMessage = null;
-
     private Animator animator;
 
 	// Use this for initialization
@@ -26,15 +24,9 @@ public class DoorController : Interactable
     {
         animator.SetBool(OPEN, open);
 
-        if (open && OpenMessage.Count != 0)
+        if (open)
         {
-            var controller = Utils.getTextController();
-            controller.Clear();
-
-            foreach (string message in OpenMessage)
-            {
-                controller.ShowMessage(message);
-            }
+            GetComponent<PlayMakerFSM>().SendEvent("OpenDoor");
         }
     }
 

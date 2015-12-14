@@ -63,7 +63,8 @@ public class HUDController : MonoBehaviour
 
     public void SkipMessage()
     {
-        startTime = 0; // Force refresh
+        displaying = false;
+        MessageBox.text = String.Empty;
     }
 
     public void Clear()

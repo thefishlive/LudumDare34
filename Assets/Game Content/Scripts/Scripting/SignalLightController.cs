@@ -10,13 +10,15 @@ public class SignalLightController : Interactable
     public GameObject Light;
 
     public bool State;
+    public bool Locked;
 
     public virtual void SetState(bool state)
     {
-        Debug.Log(state);
+        if (Locked) return;
+
         State = state;
         Light.GetComponent<MeshRenderer>().material = State ? OnMaterial : OffMaterial;
-        Controller.SendSignal(State);
+        Controller.SendSignal(this, State);
     }
 
     public void Toggle()
@@ -27,6 +29,11 @@ public class SignalLightController : Interactable
     public override void interact()
     {
         Toggle();
+    }
+
+    public void Lock()
+    {
+        Locked = true;
     }
 
 }
