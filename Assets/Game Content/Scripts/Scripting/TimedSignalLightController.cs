@@ -7,8 +7,7 @@ public class TimedSignalLightController : SignalLightController
 
     private float time;
     private float startTime;
-
-
+    
     // Update is called once per frame
     void Update()
     {
