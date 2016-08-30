@@ -11,6 +11,13 @@ December 2015, 12th - 14th
 ##Entry Type
 Compo
 
+##Links
+|                 |                                                                    |
+|-----------------|--------------------------------------------------------------------|
+| Project Page    | http://thefishlive.co.uk/projects/ludum-dare/escape/               |
+| Play Game       | http://thefishlive.co.uk/ludumdare/34/                             |
+| LudumDare Entry | http://ludumdare.com/compo/ludum-dare-34/?action=preview&uid=39247 |
+
 ##Theme
 Two Button Control
 
